@@ -1,11 +1,15 @@
 import React from 'react';
 import Recipe from './Recipe';
 
-function Recipes({ recipes, openPopup }) {    
+function Recipes({ recipes, openPopup }) {
   return (
     <section className="recipes">
-      {recipes.map(recipe => (        
-        <Recipe recipes={recipes} recipe={recipe} openPopup={openPopup} />
+      {recipes.map(recipe => (     
+        <Recipe 
+          key={recipe.recipe.calories + recipe.recipe.label} 
+          recipes={recipes} 
+          recipe={recipe} 
+          openPopup={openPopup} />        
       ))}
     </section>
   )

@@ -7,6 +7,15 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 
 function Recipe({ recipes, recipe, openPopup }) {
+  const prepTime = (mins) => {
+    let h = Math.floor(mins /60);
+    let m = mins % 60;
+
+    m = m < 10 ? '0' + m : m;
+
+    return `${h}h ${m}m`;
+  }
+  
   return (    
     <div className='recipe' onClick={() => openPopup(recipes, recipe.recipe.uri)}>
       <img src={recipe.recipe.image} alt=""/>
@@ -15,7 +24,7 @@ function Recipe({ recipes, recipe, openPopup }) {
       <div className="meta">
         <span className='time'>
           <FontAwesomeIcon className='icon' icon={faClock} />
-          {recipe.recipe.totalTime} mins
+          {prepTime(recipe.recipe.totalTime)} 
         </span>
         <span className='ingredients-num'>
           <FontAwesomeIcon className='icon' icon={faUtensils} />

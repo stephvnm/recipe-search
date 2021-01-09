@@ -17,5 +17,4 @@ function Search ({ search, handleInput }) {
     </div>
   )
 }
-
 export default Search;

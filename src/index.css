@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap');
 
 /* General */
+:root {
+  --mainColor: #C59D5F;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,15 +28,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('./images/headingBcg.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url('./images/headingBcg.jpg') no-repeat center/cover;
 }
 
 .search-box-wrapper{
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
+  background-color: rgba(0,0,0,.7);
   padding: 50px;  
   width: 60%;
 }
@@ -40,11 +40,7 @@ body {
 .search-box-wrapper h1{
   text-align: center;
   margin-bottom: 25px;
-  color: #C59D5F;
-}
-
-form {
-  margin: 0 auto;
+  color: var(--mainColor);
 }
 
 .search-bar{
@@ -59,23 +55,18 @@ form {
   font-style: italic;
 }
 
-.search-bar:focus{
+.search-bar:focus, .search-btn:focus{
   outline: none;
   opacity: 1;
 }
 
 .search-btn{
   height: 40px;
-  background-color: #C59D5F;
-  color: #ffffff;
-  padding: 0 5px;
+  width: 20%;
+  background-color: var(--mainColor);
+  color: #fff;
   border: none;  
-  border-left: 1px solid #d3d3d3;
   cursor: pointer;
-}
-
-.search-btn:focus{
-  outline: none;
 }
 
 .separator{
@@ -85,13 +76,12 @@ form {
 }
 
 .separator h2{
-  color: #C59D5F;
-  padding: 18px 0;
-  letter-spacing: 1px;
+  color: var(--mainColor);
+  padding: 18px 0;  
 }
 
 /* Recipes styling */
-.featured-recipes-wrapper, .recipes{
+.recipes{
   padding: 15px;
   width: 100%;
   background-color: #f8f8ff;
@@ -113,7 +103,7 @@ form {
 }
 
 .recipe .source {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0,0,0,.5);
   font-style: italic;
   font-size: 14px;
   padding: 7px 0;
@@ -124,21 +114,21 @@ form {
   padding-bottom: 20px;
   text-align: center;
   text-transform: capitalize;
-  color: #C59D5F;
+  color: var(--mainColor);
 }
 
 .recipe .meta{
   border-top: 1px solid #d3d3d3;
   width: 100%; 
   max-height: 40px !important; 
-  padding: 10px 0;
+  padding: 10px 5px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;  
+  justify-content: space-between;  
 }
 
 .icon {
-  margin: 0 8px;
+  margin: 0 5px;
 }
 
 /* Popup */
@@ -150,7 +140,7 @@ form {
   width: 100vw;
   overflow-y: scroll;
   background-color:#f8f8ff;
-  color: #000000;
+  color: #000;
   z-index: 5;
 }
 
@@ -171,7 +161,7 @@ form {
 .popup-header h1{
   font-size: 38px;
   text-transform: uppercase;
-  color: #C59D5F;
+  color: var(--mainColor);
   max-width: 80%;  
 }
 
@@ -179,7 +169,7 @@ form {
   font-size: 20px;
   font-style: italic;
   text-transform: none;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0,0,0,.6);
   padding: 0 10px;
 }
 
@@ -187,26 +177,20 @@ hr {
   display: block;
   height: 1px;
   width: 70%;
-  border: 0;
-  border-top: 1px solid black;
   margin: 0 auto;
-  padding: 0;  
 }
 
 .main-content{
-  padding: 30px;  
+  padding: 30px 30px 60px 30px;  
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
 }
 
 .main-content img{
   height: 100%;
-  width: auto;
   margin-right: 30px;
   align-self: flex-start;
-  justify-self: end;
 }
 
 .ingredients {
@@ -218,13 +202,9 @@ hr {
 .ingredients h3{
   font-size: 25px;
   letter-spacing: 1px;
-  color: #C59D5F;
+  color: var(--mainColor);
   text-decoration: underline;
   margin-bottom: 15px;
-}
-
-.ingredients li{
-  font-size: 20px;
 }
 
 .ingredients h4{
@@ -238,13 +218,13 @@ hr {
 }
 
 .info a{
-  color: #C59D5F;
+  color: var(--mainColor);
   text-decoration: underline;
   font-style: italic;
 }
 
 .info a:hover{
-  color: #000000;
+  color: #000;
 }
 
 .popup footer{
@@ -258,8 +238,8 @@ hr {
   height: 40px;
   border: none;
   border-radius: 10px;
-  background-color: #C59D5F;
-  color: #ffffff;
+  background-color: var(--mainColor);
+  color: #fff;
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
@@ -269,8 +249,8 @@ hr {
 
 .popup footer button:hover{
   background-color: transparent;
-  border: 1px solid #C59D5F;
-  color: #C59D5F;
+  border: 1px solid var(--mainColor);
+  color: var(--mainColor);
 }
 
 /* Main page queries */
@@ -326,9 +306,9 @@ hr {
   }
   
   .main-content img {
-    width: 80%;
-    
+    width: 80%;    
   }
+  
   .ingredients {
     padding: 10px;
   }
