@@ -19,7 +19,10 @@ function App () {
 
   const fetchData = (query, hitsCount) => {
     axios.get(`${API_URL}?q=${query}&app_id=${API_ID}&app_key=${API_KEY}&to=${hitsCount}`)
-      .then(({ data }) => setRecipes(data.hits));
+      .then(({ data }) => setRecipes(data.hits))
+      .catch((error) => {
+        console.log(error);
+      })
   }
   
   useEffect(() => { 
